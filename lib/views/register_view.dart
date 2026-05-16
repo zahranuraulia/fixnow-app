@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'login_view.dart';
+import 'package:fixnow/views/login_view.dart';
 
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
