@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 // Import halaman utama (Relative Path)
 import 'views/splash_view.dart';
 import 'views/login_view.dart';
-import 'views/register_view.dart';
+import 'views/register_view.dart' hide HomeView;
 import 'views/dashboard/home_view.dart';
 import 'views/dashboard/category_detail_view.dart';
 
