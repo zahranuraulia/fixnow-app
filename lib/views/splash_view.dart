@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:fixnow/constants/app_colors.dart';
 import 'login_view.dart'; // Memastikan import halaman Login untuk navigasi setelah timer selesai
 
 class SplashView extends StatefulWidget {
@@ -12,16 +13,16 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    super.initState(); 
-      // Menjalankan Timer selama 3 detik sebelum berpindah ke halaman Lgin
-      Timer(const Duration(seconds: 3), () {
-        if (mounted) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => const LoginView()),
-          );
-        }
-      });
+    super.initState();
+    // Menjalankan Timer selama 3 detik sebelum berpindah ke halaman Lgin
+    Timer(const Duration(seconds: 2), () {
+      if (mounted) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const LoginView()),
+        );
+      }
+    });
   }
 
   @override
@@ -30,8 +31,8 @@ class _SplashViewState extends State<SplashView> {
     final double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(
-      // Menggunakan warna oranye solid sebagai background utama
-      backgroundColor: Colors.orange,
+      // Menyamakan warna theme utama aplikasi
+      backgroundColor: AppColors.primaryOrange,
       body: Stack(
         children: [
           // 1. Ornamen Lingkaran Besar Samar di Pojok Kiri Atas
@@ -44,7 +45,7 @@ class _SplashViewState extends State<SplashView> {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 // Menggunakan putih dengan opacity rendah agar samar-samar estetis
-                color: Colors.white.withValues(alpha: 0.1),
+                color: Colors.white.withOpacity(0.1),
               ),
             ),
           ),
@@ -58,7 +59,7 @@ class _SplashViewState extends State<SplashView> {
               height: screenWidth * 0.9,
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.white.withValues(alpha: 0.1),
+                color: Colors.white.withOpacity(0.1),
               ),
             ),
           ),
@@ -80,7 +81,7 @@ class _SplashViewState extends State<SplashView> {
                       Icon(
                         Icons.build, // Ikon kunci pas
                         size: screenWidth * 0.25,
-                        color: Colors.white.withValues(alpha: 0.9),
+                        color: Colors.white.withOpacity(0.9),
                       ),
                     ],
                   ),
@@ -91,7 +92,7 @@ class _SplashViewState extends State<SplashView> {
                     'FixNow',
                     style: TextStyle(
                       fontSize: 36,
-                      fontWeight: FontWeight.bold,
+                      fontWeight: FontWeight.w800,
                       color: Colors.white,
                       letterSpacing: 1.2,
                     ),
